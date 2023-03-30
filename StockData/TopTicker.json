@@ -1,0 +1,12 @@
+[
+  { "Name": "Apple Inc", "Symbol": "AAPL" },
+  { "Name": "Microsoft Corp", "Symbol": "MSFT" },
+  { "Name": "Amazon.com Inc", "Symbol": "AMZN" },
+  { "Name": "Facebook Inc Class A", "Symbol": "FB" },
+  { "Name": "Alphabet Inc Class A", "Symbol": "GOOGL" },
+  { "Name": "Alphabet Inc Class C", "Symbol": "GOOG" },
+  { "Name": "Tesla Inc", "Symbol": "TSLA" },
+  { "Name": "NVIDIA Corp", "Symbol": "NVDA" },
+  { "Name": "Visa Inc Class A", "Symbol": "V" },
+  { "Name": "PayPal Holdings Inc", "Symbol": "PYPL" }
+]
