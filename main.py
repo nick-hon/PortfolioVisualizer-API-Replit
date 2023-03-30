@@ -1,4 +1,4 @@
-from flask import Flask, Response, request, render_template, send_from_directory
+from flask import Flask, Response, request
 # import os
 import json
 import handleAPI.backtester as hBt
@@ -54,9 +54,8 @@ def searchAPI(search):
     print(search_list)
     return Response(json.dumps(search_list), mimetype='application/json', status=200)
 
+
 # limit Search Symbol API
-
-
 @app.route('/api/keyword/<search>/limit/<max>')
 def limitSearchAPI(search, max):
     # print("--------/keyword-with-Limit-applied-----------" +
