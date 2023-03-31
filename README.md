@@ -48,10 +48,16 @@ virtualenv
 
       python ./main.py
 
-      瀏覽器開啟 http://localhost:8080/
+      API URL: http://localhost:8080/
 
       測試完成後關閉伺服器
 
 7.  退出 virtualenv
 
         deactivate
+
+#### 其他指令
+
+- 製作 requirements.txt
+
+        pip freeze > requirements.txt
