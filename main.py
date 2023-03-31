@@ -95,32 +95,18 @@ def searchYfStocksAPI(query):
     headers = {
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'}
 
-    # r = requests.get(url, headers=headers, timeout=(2, 10))
-    # r.raise_for_status()  # raise for non-OK
-    # return r.json()       # interpret response via some method (for example as JSON)
-
     try:
         res = requests.get(url, headers=headers)
         res.raise_for_status()
         res_stocks = res.json()
-        def funs(x): return {'symbol': x['symbol'], 'name': x['name']}
-        stocks_list = list(map(funs, res_stocks['items']))
-        print(stocks_list)
+        def toSymbol_Name(x): return {'symbol': x['symbol'], 'name': x['name']}
+        stocks_list = list(map(toSymbol_Name, res_stocks['items']))
+        # print(stocks_list)
         return Response(json.dumps({'results': stocks_list, 'message': ''}), mimetype='application/json', status=res.status_code)
 
     except requests.exceptions.RequestException as e:
         print(f'ERROR : {e}')
         return Response(json.dumps({'results': [], 'message': f'ERROR : {e}'}), mimetype='application/json', status=res.status_code)
-
-    # headers = {
-    #     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'}
-    # r = requests.get(url, headers=headers)
-    # print(r.status_code)
-    # rj = r.json()
-
-    # if r.status_code == 500:
-
-    # return Response(json.dumps({'status_code': r.status_code, "length": length}), mimetype='application/json', status=200)
 
 
 print("Server is running...")
