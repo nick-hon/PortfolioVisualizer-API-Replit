@@ -13,6 +13,7 @@ yfinance = "^0.2.18"
 bt = "^0.2.9"
 ffn = "^0.3.6"
 Flask = "^2.2.3"
+waitress = "2.1.2"
 
 [tool.poetry.dev-dependencies]
 
