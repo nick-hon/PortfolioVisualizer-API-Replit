@@ -1,0 +1,248 @@
+[
+  { "key": "start", "name": "Start", "name_cn": "開始", "data_format": "dt" },
+  { "key": "end", "name": "End", "name_cn": "終結", "data_format": "dt" },
+  {
+    "key": "rf",
+    "name": "Risk-free rate",
+    "name_cn": "無風險利率",
+    "data_format": "p"
+  },
+  {
+    "key": "total_return",
+    "name": "Total Return",
+    "name_cn": "總回報",
+    "data_format": "p"
+  },
+  { "key": "cagr", "name": "CAGR", "name_cn": "年化回報", "data_format": "p" },
+  {
+    "key": "max_drawdown",
+    "name": "Max Drawdown",
+    "name_cn": "最大回撤",
+    "data_format": "p"
+  },
+  {
+    "key": "calmar",
+    "name": "Calmar Ratio",
+    "name_cn": "回撤比率",
+    "data_format": "n"
+  },
+  { "key": "mtd", "name": "MTD", "name_cn": "月初至今", "data_format": "p" },
+  {
+    "key": "three_month",
+    "name": "3-Month",
+    "name_cn": "3個月",
+    "data_format": "p"
+  },
+  {
+    "key": "six_month",
+    "name": "6-Month",
+    "name_cn": "6個月",
+    "data_format": "p"
+  },
+  { "key": "ytd", "name": "YTD", "name_cn": "年初至今", "data_format": "p" },
+  { "key": "one_year", "name": "1-Year", "name_cn": "1年", "data_format": "p" },
+  {
+    "key": "three_year",
+    "name": "3-Year",
+    "name_cn": "3年",
+    "data_format": "p"
+  },
+  {
+    "key": "five_year",
+    "name": "5-Year",
+    "name_cn": "5年",
+    "data_format": "p"
+  },
+  {
+    "key": "ten_year",
+    "name": "10-Year",
+    "name_cn": "10年",
+    "data_format": "p"
+  },
+  {
+    "key": "incep",
+    "name": "Inception",
+    "name_cn": "自開始至今",
+    "data_format": "p"
+  },
+  {
+    "key": "daily_sharpe",
+    "name": "Daily Sharpe",
+    "name_cn": "夏普比率(每日)",
+    "data_format": "n"
+  },
+  {
+    "key": "daily_sortino",
+    "name": "Daily Sortino",
+    "name_cn": "索提諾比率(每日)",
+    "data_format": "n"
+  },
+  {
+    "key": "daily_mean",
+    "name": "Daily Mean",
+    "name_cn": "平均值(每日)",
+    "data_format": "p"
+  },
+  {
+    "key": "daily_vol",
+    "name": "Daily Vol",
+    "name_cn": "標準差(每日)",
+    "data_format": "p"
+  },
+  {
+    "key": "daily_skew",
+    "name": "Daily Skew",
+    "name_cn": "偏態係數(每日)",
+    "data_format": "n"
+  },
+  {
+    "key": "daily_kurt",
+    "name": "Daily Kurt",
+    "name_cn": "峰態係數(每日)",
+    "data_format": "n"
+  },
+  {
+    "key": "best_day",
+    "name": "Best Day",
+    "name_cn": "最好一日",
+    "data_format": "p"
+  },
+  {
+    "key": "worst_day",
+    "name": "Worst Day",
+    "name_cn": "最差一日",
+    "data_format": "p"
+  },
+  {
+    "key": "monthly_sharpe",
+    "name": "Sharpe Ratio",
+    "name_cn": "夏普比率",
+    "data_format": "n"
+  },
+  {
+    "key": "monthly_sortino",
+    "name": "Sortino Ratio",
+    "name_cn": "索提諾比率",
+    "data_format": "n"
+  },
+  {
+    "key": "monthly_mean",
+    "name": "Mean",
+    "name_cn": "平均值",
+    "data_format": "p"
+  },
+  {
+    "key": "monthly_vol",
+    "name": "Volatility",
+    "name_cn": "標準差",
+    "data_format": "p"
+  },
+  {
+    "key": "monthly_skew",
+    "name": "Skew",
+    "name_cn": "偏態係數",
+    "data_format": "n"
+  },
+  {
+    "key": "monthly_kurt",
+    "name": "Kurt",
+    "name_cn": "峰態係數",
+    "data_format": "n"
+  },
+  {
+    "key": "best_month",
+    "name": "Best Month",
+    "name_cn": "最好一月",
+    "data_format": "p"
+  },
+  {
+    "key": "worst_month",
+    "name": "Worst Month",
+    "name_cn": "最差一月",
+    "data_format": "p"
+  },
+  {
+    "key": "yearly_sharpe",
+    "name": "Yearly Sharpe",
+    "name_cn": "夏普比率(每年)",
+    "data_format": "n"
+  },
+  {
+    "key": "yearly_sortino",
+    "name": "Yearly Sortino",
+    "name_cn": "索提諾比率(每年)",
+    "data_format": "n"
+  },
+  {
+    "key": "yearly_mean",
+    "name": "Yearly Mean",
+    "name_cn": "平均值(每年)",
+    "data_format": "p"
+  },
+  {
+    "key": "yearly_vol",
+    "name": "Yearly Vol",
+    "name_cn": "標準差(每年)",
+    "data_format": "p"
+  },
+  {
+    "key": "yearly_skew",
+    "name": "Yearly Skew",
+    "name_cn": "偏態係數(每年)",
+    "data_format": "n"
+  },
+  {
+    "key": "yearly_kurt",
+    "name": "Yearly Kurt",
+    "name_cn": "峰態係數(每年)",
+    "data_format": "n"
+  },
+  {
+    "key": "best_year",
+    "name": "Best Year",
+    "name_cn": "最好一年",
+    "data_format": "p"
+  },
+  {
+    "key": "worst_year",
+    "name": "Worst Year",
+    "name_cn": "最差一年",
+    "data_format": "p"
+  },
+  {
+    "key": "avg_drawdown",
+    "name": "Avg Drawdown",
+    "name_cn": "平均回撤",
+    "data_format": "p"
+  },
+  {
+    "key": "avg_drawdown_days",
+    "name": "Avg Drawdown Days",
+    "name_cn": "平均回撤日數",
+    "data_format": "n"
+  },
+  {
+    "key": "avg_up_month",
+    "name": "Avg Up Month",
+    "name_cn": "平均上升月份漲幅",
+    "data_format": "p"
+  },
+  {
+    "key": "avg_down_month",
+    "name": "Avg Down Month",
+    "name_cn": "平均下跌月份跌幅",
+    "data_format": "p"
+  },
+  {
+    "key": "win_year_perc",
+    "name": "Win Year %",
+    "name_cn": "上升年份%",
+    "data_format": "p"
+  },
+  {
+    "key": "twelve_month_win_perc",
+    "name": "Win 12m %",
+    "name_cn": "上升12個月%",
+    "data_format": "p"
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Portfolio #1",
+    "assets": [
+      {
+        "ticker": "VIGRX",
+        "allocation": 0.4
+      },
+      {
+        "ticker": "VWEHX",
+        "allocation": 0.3
+      },
+      {
+        "ticker": "VGSIX",
+        "allocation": 0.2
+      },
+      {
+        "ticker": "GC=F",
+        "allocation": 0.1
+      }
+    ]
+  },
+  {
+    "name": "Portfolio #2",
+    "assets": [
+      {
+        "ticker": "VIGRX",
+        "allocation": 0.5
+      },
+      {
+        "ticker": "VWEHX",
+        "allocation": 0.3
+      },
+      {
+        "ticker": "VGSIX",
+        "allocation": 0.1
+      },
+      {
+        "ticker": "GC=F",
+        "allocation": 0.1
+      }
+    ]
+  },
+  {
+    "name": "Portfolio #3",
+    "assets": [
+      {
+        "ticker": "VIGRX",
+        "allocation": 0.7
+      },
+      {
+        "ticker": "VWEHX",
+        "allocation": 0.2
+      },
+      {
+        "ticker": "VGSIX",
+        "allocation": 0.1
+      },
+      {
+        "ticker": "GC=F",
+        "allocation": 0.0
+      }
+    ]
+  }
+]

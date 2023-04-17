@@ -1,0 +1,50 @@
+{
+    "port_perf_chart": {
+        "labelEn": "Portfolio Performance Chat",
+        "labelCn": "投資組合折線圖",
+        "subject": "portfolio",
+        "metricGroup": null
+    },
+    "port_summary_metrics": {
+        "labelEn": "Summary",
+        "labelCn": "總覽",
+        "subject": "portfolio",
+        "metricGroup": "summary_metrics"
+    },
+    "port_return_metrics": {
+        "labelEn": "Returns",
+        "labelCn": "報酬率",
+        "subject": "portfolio",
+        "metricGroup": "return_metrics"
+    },
+    "asset_return_metrics": {
+        "labelEn": "Returns",
+        "labelCn": "報酬率",
+        "subject": "asset",
+        "metricGroup": "return_metrics"
+    },
+    "drawdown_chart": {
+        "labelEn": "Drawdown Chat",
+        "labelCn": "回撤折線圖",
+        "subject": "portfolio",
+        "metricGroup": null
+    },
+    "drawdowns": {
+        "labelEn": "Drawdowns",
+        "labelCn": "回撤",
+        "subject": "portfolio",
+        "metricGroup": null
+    },
+    "asset_summary_metrics": {
+        "labelEn": "Asset Metrics",
+        "labelCn": "資產組合表現指標",
+        "subject": "asset",
+        "metricGroup": "summary_metrics"
+    },
+    "asset_corr": {
+        "labelEn": "Correlations",
+        "labelCn": "相關性",
+        "subject": "asset",
+        "metricGroup": null
+    }
+}

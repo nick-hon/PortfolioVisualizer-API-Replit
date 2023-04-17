@@ -1,0 +1,22 @@
+{
+    "summary_metrics": [
+        "total_return",
+        "cagr",
+        "monthly_vol",
+        "best_year",
+        "worst_year",
+        "max_drawdown",
+        "monthly_sharpe",
+        "monthly_sortino"
+    ],
+    "return_metrics": [
+        "mtd",
+        "three_month",
+        "six_month",
+        "ytd",
+        "one_year",
+        "three_year",
+        "five_year",
+        "ten_year"
+    ]
+}

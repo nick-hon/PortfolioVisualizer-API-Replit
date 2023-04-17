@@ -1,0 +1,186 @@
+{
+  "start": {
+    "labelEn": "Start",
+    "labelCn": "開始"
+  },
+  "end": {
+    "labelEn": "End",
+    "labelCn": "終結"
+  },
+  "rf": {
+    "labelEn": "Risk-free rate",
+    "labelCn": "無風險利率"
+  },
+  "total_return": {
+    "labelEn": "Total Return",
+    "labelCn": "總回報"
+  },
+  "cagr": {
+    "labelEn": "CAGR",
+    "labelCn": "年化回報"
+  },
+  "max_drawdown": {
+    "labelEn": "Max Drawdown",
+    "labelCn": "最大回撤"
+  },
+  "calmar": {
+    "labelEn": "Calmar Ratio",
+    "labelCn": "回撤比率"
+  },
+  "mtd": {
+    "labelEn": "MTD",
+    "labelCn": "月初至今"
+  },
+  "three_month": {
+    "labelEn": "3-Month",
+    "labelCn": "3個月"
+  },
+  "six_month": {
+    "labelEn": "6-Month",
+    "labelCn": "6個月"
+  },
+  "ytd": {
+    "labelEn": "YTD",
+    "labelCn": "年初至今"
+  },
+  "one_year": {
+    "labelEn": "1-Year",
+    "labelCn": "1年"
+  },
+  "three_year": {
+    "labelEn": "3-Year",
+    "labelCn": "3年"
+  },
+  "five_year": {
+    "labelEn": "5-Year",
+    "labelCn": "5年"
+  },
+  "ten_year": {
+    "labelEn": "10-Year",
+    "labelCn": "10年"
+  },
+  "incep": {
+    "labelEn": "Inception",
+    "labelCn": "自開始至今"
+  },
+  "daily_sharpe": {
+    "labelEn": "Daily Sharpe",
+    "labelCn": "夏普比率(每日)"
+  },
+  "daily_sortino": {
+    "labelEn": "Daily Sortino",
+    "labelCn": "索提諾比率(每日)"
+  },
+  "daily_mean": {
+    "labelEn": "Daily Mean",
+    "labelCn": "平均值(每日)"
+  },
+  "daily_vol": {
+    "labelEn": "Daily Vol",
+    "labelCn": "標準差(每日)"
+  },
+  "daily_skew": {
+    "labelEn": "Daily Skew",
+    "labelCn": "偏態係數(每日)"
+  },
+  "daily_kurt": {
+    "labelEn": "Daily Kurt",
+    "labelCn": "峰態係數(每日)"
+  },
+  "best_day": {
+    "labelEn": "Best Day",
+    "labelCn": "最好一日"
+  },
+  "worst_day": {
+    "labelEn": "Worst Day",
+    "labelCn": "最差一日"
+  },
+  "monthly_sharpe": {
+    "labelEn": "Sharpe Ratio",
+    "labelCn": "夏普比率"
+  },
+  "monthly_sortino": {
+    "labelEn": "Sortino Ratio",
+    "labelCn": "索提諾比率"
+  },
+  "monthly_mean": {
+    "labelEn": "Mean",
+    "labelCn": "平均值"
+  },
+  "monthly_vol": {
+    "labelEn": "Volatility",
+    "labelCn": "標準差"
+  },
+  "monthly_skew": {
+    "labelEn": "Skew",
+    "labelCn": "偏態係數"
+  },
+  "monthly_kurt": {
+    "labelEn": "Kurt",
+    "labelCn": "峰態係數"
+  },
+  "best_month": {
+    "labelEn": "Best Month",
+    "labelCn": "最好一月"
+  },
+  "worst_month": {
+    "labelEn": "Worst Month",
+    "labelCn": "最差一月"
+  },
+  "yearly_sharpe": {
+    "labelEn": "Yearly Sharpe",
+    "labelCn": "夏普比率(每年)"
+  },
+  "yearly_sortino": {
+    "labelEn": "Yearly Sortino",
+    "labelCn": "索提諾比率(每年)"
+  },
+  "yearly_mean": {
+    "labelEn": "Yearly Mean",
+    "labelCn": "平均值(每年)"
+  },
+  "yearly_vol": {
+    "labelEn": "Yearly Vol",
+    "labelCn": "標準差(每年)"
+  },
+  "yearly_skew": {
+    "labelEn": "Yearly Skew",
+    "labelCn": "偏態係數(每年)"
+  },
+  "yearly_kurt": {
+    "labelEn": "Yearly Kurt",
+    "labelCn": "峰態係數(每年)"
+  },
+  "best_year": {
+    "labelEn": "Best Year",
+    "labelCn": "最好一年"
+  },
+  "worst_year": {
+    "labelEn": "Worst Year",
+    "labelCn": "最差一年"
+  },
+  "avg_drawdown": {
+    "labelEn": "Avg Drawdown",
+    "labelCn": "平均回撤"
+  },
+  "avg_drawdown_days": {
+    "labelEn": "Avg Drawdown Days",
+    "labelCn": "平均回撤日數"
+  },
+  "avg_up_month": {
+    "labelEn": "Avg Up Month",
+    "labelCn": "平均上升月份漲幅"
+  },
+  "avg_down_month": {
+    "labelEn": "Avg Down Month",
+    "labelCn": "平均下跌月份跌幅"
+  },
+  "win_year_perc": {
+    "labelEn": "Win Year %",
+    "labelCn": "上升年份%"
+  },
+  "twelve_month_win_perc": {
+    "labelEn": "Win 12m %",
+    "labelCn": "上升12個月%"
+  }
+}
