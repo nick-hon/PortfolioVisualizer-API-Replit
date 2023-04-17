@@ -27,8 +27,9 @@ def hello_world():
 @app.route('/api/portfolios', methods=['POST'])
 def portfoliosAPI():
     req = request.json
-    data = hBt.run_backtest(
-        start=req[0], end=req[1], portfolios=req[2])
+    data = hBt.run_backtest(start=req[0], end=req[1], portfolios=req[2])
+
+    print('Portfolios Backtest Completed!')
     return Response(json.dumps(data), mimetype='application/json', status=200)
 
 
