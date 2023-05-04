@@ -11,19 +11,23 @@ import yfinance
 yfinance.pdr_override()
 
 
+def clean_portfolios(portfolios):
+    # List comprehension to return a new portfolios list containing only non-empty portfolios, i.e. any non-zero asset allocation
+    return [p for p in portfolios if any(asset["allocation"] != 0.0 for asset in p["assets"])]
+
+
 def download(start, end, portfolios, allocations=None):
-    if allocations == None:
+    if allocations is None:
         allocations = []
     tickers = []
-    for i in range(len(portfolios)):
+    for portfolio in portfolios:
         assets = {}
-        for j in range(len(portfolios[i]["assets"])):
-            ticker = portfolios[i]["assets"][j]["ticker"]
+        for asset in portfolio["assets"]:
+            ticker = asset["ticker"]
             # Cleans ticker for use throughout bt:
             # Basically converts to lower case and removes any non-standard characters (GC=F -> gcf)
-            # assets[ticker.lower().replace("=", "")] = portfolios[i]["assets"][j]["allocation"]
-            assets[utils.clean_ticker(
-                ticker)] = portfolios[i]["assets"][j]["allocation"]
+            clean_ticker = utils.clean_ticker(ticker)
+            assets[clean_ticker] = asset["allocation"]
             if ticker not in tickers:
                 tickers.append(ticker)
         allocations.append(assets)
@@ -43,6 +47,7 @@ def set_backtest(prices, strategy_name, weight):
 
 
 def run_backtest(start, end, portfolios):
+    portfolios = clean_portfolios(portfolios)
     allocations = []
     a_prices = download(start, end, portfolios, allocations)
     backtests = []
@@ -50,7 +55,8 @@ def run_backtest(start, end, portfolios):
         t = set_backtest(a_prices, portfolios[i]["name"], allocations[i])
         backtests.append(t)
 
-    p_stats = bt.run(backtests[0], backtests[1], backtests[2])
+    p_stats = bt.run(*backtests)
+    
     a_stats = ffn.calc_stats(a_prices)
     # Type returned from bt.run() is bt.backtest.Result, which is inherited from GroupStats
     # Type returned from ffn.calc_stats(): Series -> PerformanceStats | DataFrame -> GroupStats
@@ -66,38 +72,50 @@ def run_backtest(start, end, portfolios):
     with open('data/result_metadata.json', mode='r', encoding='utf8') as f:
         result_metadatas = json.load(f)
 
+    # The below code first checks metadatas['metricGroup'] in each item of the 
+    # result_metadatas dictionary. 
+    # If it is not None, it checks the value of metadatas['subject'] to determine 
+    # whether to use p_stats.stats (portfolio stats) or a_stats.stats (asset stats) 
+    # as the source of the data. It then looks up the appropriate list of metric keys
+    # from the metric_groups dictionary using metadatas['metricGroup'], filters the 
+    # source data to include only the desired metrics, and adds a new column to the 
+    # resulting DataFrame with the corresponding label. The resulting DataFrame is 
+    # then appended to the dfs list along with the key from the result_metadatas dict.
+    # If it is None, it checks the value of result to determine which of several cases
+    # to handle next. Basically it sources the data from either p_stats or a_stats.
     dfs = []
-
     for result, metadatas in result_metadatas.items():
         if metadatas['metricGroup'] is not None:
             if metadatas['subject'] == "portfolio":
                 stats = p_stats.stats
             elif metadatas['subject'] == "asset":
                 stats = a_stats.stats
-            for group, metrics in metric_groups.items():
-                if group == metadatas['metricGroup']:
-                    df = stats.filter(items=metrics, axis=0)
-                    # labelCns = [metric_info[m]['labelCn'] for m in metrics]
-                    # df.insert(0, 'labelCn', labelCns)
-                    dfs.append((result, df))
-
-        elif result == "port_perf_chart":
-            df = p_stats.prices
+            else:
+                stats = None
+                continue
+            metrics = metric_groups.get(metadatas['metricGroup'], [])
+            df = stats.filter(items=metrics, axis=0)
+            # labelCns = [metric_info[m]['labelCn'] for m in metrics]
+            # df.insert(0, 'labelCn', labelCns)
             dfs.append((result, df))
+        else:
+            if result == "port_perf_chart":
+                df = p_stats.prices
+                dfs.append((result, df))
+           
+            elif result == "drawdown_chart":
+                df = ffn.to_drawdown_series(p_stats.prices)
+                dfs.append((result, df))
 
-        elif result == "drawdown_chart":
-            df = ffn.to_drawdown_series(p_stats.prices)
-            dfs.append((result, df))
+            elif result == "drawdowns":
+                for i in range(len(portfolios)):
+                    if p_stats[i].drawdown_details is not None:
+                        df = p_stats[i].drawdown_details.sort_values('drawdown').head(5)
+                        dfs.append((portfolios[i]['name'] + " " + result, df))
 
-        elif result == "drawdowns":
-            for i in range(len(portfolios)):
-                df = p_stats[i].drawdown_details.sort_values(
-                    'drawdown').head(5)
-                dfs.append((portfolios[i]['name'] + " " + result, df))
-
-        elif result == "asset_corr":
-            df = a_prices.pct_change().corr()
-            dfs.append((result, df))
+            elif result == "asset_corr":
+                df = a_prices.pct_change().corr()
+                dfs.append((result, df))
 
     out_json = {}
     for result, df in dfs:
