@@ -42,7 +42,7 @@ def filter_list(func, iterable):
 @app.route('/api/keyword/<search>')
 def searchAPI(search):
     # print("--------/keyword-----------"+search)
-    search = search.lower()
+    search = search.lower().rstrip().lstrip()
 
     def search_even(x):
         s = json.dumps(x["symbol"]).lower().find(search)
@@ -72,7 +72,7 @@ def limitSearchAPI(search, max):
         return False
 
     if max.isnumeric():
-        search = search.lower()
+        search = search.lower().rstrip().lstrip()
         maxResults = int(max)
         g = filter_list(search_even, Ticker)
         if maxResults > len(g) | maxResults == 0:
@@ -100,8 +100,8 @@ def limitSearchAPI(search, max):
 
 @app.route('/api/yahoos_finance_stocks/<query>')
 def searchYfStocksAPI(query):
-    #   print("--------/stocks-----------" + query)
-    query = query.lower()
+    print("--------/stocks-----------" + query)
+    query = query.lower().rstrip().lstrip()
 
     url = f'https://finance.yahoo.com/_finance_doubledown/api/resource/searchassist;searchTerm={query}'
     headers = {
