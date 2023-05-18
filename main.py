@@ -9,7 +9,8 @@ from flask_cors import CORS
 
 app = Flask('app')
 
-CORS(app)
+# CORS(app)
+CORS(app, resources={r"/.*": {"origins": ["*"]}})
 
 with open('./StockData/simpleStockList.json', newline='') as jsonfile:
     Ticker = json.load(jsonfile)
